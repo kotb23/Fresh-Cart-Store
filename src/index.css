@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/* !WebSite Font */
+@font-face {
+  font-family: "EncodeSans";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("../src/assets/Fonts/EncodeSans-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "EncodeSans";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../src/assets/Fonts/EncodeSans-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "EncodeSans";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../src/assets/Fonts/EncodeSans-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "EncodeSans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../src/assets/Fonts/EncodeSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "EncodeSans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../src/assets/Fonts/EncodeSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "EncodeSans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../src/assets/Fonts/EncodeSans-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "EncodeSans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../src/assets/Fonts/EncodeSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "EncodeSans";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../src/assets/Fonts/EncodeSans-ExtraBold.ttf") format("truetype");
+}
+
+/* !Loading */
+.loader {
+  position: relative;
+  width: 64px;
+  height: 84px;
+}
+.loader::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #cad5e2;
+  width: 64px;
+  height: 42px;
+  border-radius: 0 0 50px 50px;
+  animation: move 0.5s linear infinite alternate;
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  background: #0b774a;
+  width: 34px;
+  height: 34px;
+  transform: translateX(-50%) rotate(0deg);
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+@keyframes move {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+/*  ?!======== Main Css ==========  */
+body {
+  font-family: "EncodeSans";
+}
+
+.active {
+  font-family: "EncodeSans";
+  font-weight: 700;
+  color: #0d945c
+}
+
+@layer utilities {
+  .my-main-hover {
+    @apply scale-100 shadow-none transition-all duration-500;
+  }
+
+  .my-main-hover:hover {
+    @apply scale-103 shadow-[0px_2px_12px_rgba(16,185,129,0.5)];
+  }
+}
+
+.btn-add-product {
+  @apply mx-auto block w-3/4 translate-y-full cursor-pointer items-center rounded-2xl border-2 border-emerald-600 px-4 py-2 opacity-0 duration-500 group-hover:-translate-y-0 group-hover:opacity-100 hover:bg-emerald-600 hover:text-white;
+}
+
+.btn-add-product-sm {
+  @apply mx-auto block w-3/4 cursor-pointer items-center rounded-2xl border-2 border-emerald-600 py-1 duration-500 hover:bg-emerald-600 hover:text-white;
+}
+
+.btn-specific-product {
+  @apply mx-auto block w-3/4 cursor-pointer items-center rounded-2xl border-2 border-emerald-600 bg-emerald-600 px-4 py-2 text-white duration-500 hover:border-emerald-700 hover:bg-emerald-700;
+}
+
+.btn-clear-cart {
+  @apply m-4 cursor-pointer rounded-2xl bg-red-700 px-6 py-2 font-[500] text-white hover:bg-red-600;
+}
+
+.productBorder {
+  @apply overflow-hidden rounded-md;
+}
+
+.header-component {
+  @apply text-center text-2xl font-[600] text-emerald-600;
+}
